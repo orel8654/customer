@@ -3,7 +3,7 @@ package main
 import (
 	"customer/internal/config"
 	"customer/internal/db/psql"
-	"customer/internal/users"
+	"customer/internal/delivery/users"
 	"customer/pkg/customer/pkg/prots"
 	"fmt"
 	"log"

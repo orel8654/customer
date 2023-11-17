@@ -29,12 +29,12 @@ func (u *UserS) GetUserList(ctx context.Context, req *prots.GetUserListRequest) 
 	}
 
 	//How to serialize data from DB to GRPC format?
-	result, err := u.r.GetOfficeUsers(ctx, officeID)
+	_, err := u.r.GetOfficeUsers(ctx, officeID)
 	if err != nil {
 		return nil, err
 	}
 
-	return result, nil
+	return nil, nil
 
 }
 
