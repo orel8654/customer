@@ -1,0 +1,15 @@
+generate_grpc_file:
+	protoc  \
+	--go_out=./pkg/customer \
+	--go-grpc_out=./pkg/customer \
+	./pkg/prots/customer_user.proto
+
+	protoc  \
+	--go_out=./pkg/office \
+	--go-grpc_out=./pkg/office \
+	./pkg/prots/customer_office.proto
+
+	protoc  \
+	--go_out=./pkg/order \
+	--go-grpc_out=./pkg/order \
+	./pkg/prots/customer_order.proto

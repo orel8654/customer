@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package pkg.prots;
+
+option go_package = "/pkg/prots";
+
+import "google/protobuf/timestamp.proto";
+
+service UserService {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
+  rpc GetUserList(GetUserListRequest) returns (GetUserListResponse) {}
+}
+
+message CreateUserRequest {
+  string name = 1;
+  string office_uuid = 2;
+}
+
+message CreateUserResponse {
+}
+
+message GetUserListRequest {
+  string office_uuid = 1;
+}
+
+message GetUserListResponse {
+  repeated User result = 1;
+}
+
+message User {
+  string uuid = 1;
+  string name = 2;
+  string office_uuid = 3;
+  string office_name = 4;
+  google.protobuf.Timestamp created_at = 5;
+}
+
